@@ -13,10 +13,11 @@ git clone https://github.com/aspidites/rock-paper-scissors.git
 git checkout epic
 ```
 
-3. Get hacking!
+3. Get hacking! Note, that you should only be modifying `game.js`. The only
+   reason you should touch `index.html` is if you decide that you want to make
+   things more pretty!
 
 4. Profit.
-
 
 # Challenge Levels
 This Repository has three different challenge levels, marked as branches. If you
