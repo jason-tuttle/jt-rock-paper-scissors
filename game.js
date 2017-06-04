@@ -16,32 +16,41 @@ function game() {
     const playerChoice = document.getElementById("player").value;
     let playerWins = false;
 
-    // Step One: Update the playerWins boolean variable based on the rules of
-    // rock, paper, scissors. You should be replacing the empty strings with
-    // values that make sense. You should also be updating the variable values
-    // within each clause, because as written, the behavior of the game won't
-    // change! Remember, paper beats rock, rock beats scissors, scissors beat
-    // paper.
-    if (playerChoice === "" && computerChoice === "") {
-        playerWins = false;
-    } else if (playerChoice === "" && computerChoice === "") {
-        playerWins = false;
-    } else if (playerChoice === "" && computerChoice === "") {
-        playerWins = false;
-    }
-
-    // Strings can be "added" together to make larger strings. \n is an escape
-    // sequence which tells the computer to print a new line. Without it, the
-    // message would be printed on one line instead of two.
-    let message = "The computer chose " + computerChoice + ".\n";
-
-    // Step Two: Complete the if statement such that the correct message is
-    // displayed win the player wins.
+    // Step One: Complete the following if statement such that it properly
+    // updates the playerWins variable after comparing the computer's choice to
+    // the player's choice. There are three branches here because of the fact
+    // that there are only three cases in which the player can win (since the
+    // computer wins ties!). Remember, paper beats rock, rock beats scissors,
+    // scissors beat paper. 
+    //
+    // Hints:
+    // - you can combine logical expressions with && and ||, where && means
+    // "and" and || means "or". Thus, "false || true" would evaluate to true
+    // because only one value needs to be truthy, while "false && true" would
+    // evalulate to false because both values need to be truthy.
+    //
+    // - given the above, this three-part if statement could be written as a
+    // single, long conditional expression inside of one if statement. Doing so
+    // would be rather difficult to read, however, which is why we have three
+    // separate if statements chained together
     if () {
-        message = message + "Congrats, you win!";
-    } else {
-        message = message + "Sorry, you lose!";
+    } else if () {
+    } else if () {
     }
+
+    // Step Two: Fix the following string such that the value of computerChoice
+    // is inserted after the word "chose" but before the period. That is, if the
+    // computer chose "rock", message should have the value "The computer chose
+    // rock.\n"
+    let message = "The computer chose .\n";
+
+    // Step Three: Write an if statement that, when the player wins, would
+    // append "Congrats, you win!" onto the end of message above, and "Sorry,
+    // you lose!" when the player loses. As an example, when a player loses,
+    // message should look like this (note the newline):
+    //
+    // The computer chose rock.
+    // Sorry, you lose!
 
     alert(message);
 }
