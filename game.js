@@ -16,6 +16,8 @@ function game() {
     const playerChoice = document.getElementById("player").value;
     // Step One: Declare a variable to keep track of whether or not the player
     // won or lost
+    var hasWon = false;
+    var hasTied = false;
 
     // Step Two: Write conditional logic which compares the player's choice with
     // the computer's and properly updates the variable you declared in step
@@ -30,12 +32,20 @@ function game() {
     // single, long conditional expression inside of one if statement. Doing so
     // would be rather difficult to read, however, which is why we have three
     // separate if statements chained together
-
+    if ((playerChoice == "rock") && (computerChoice == "scissors")) {
+      hasWon = true;
+    } else if ((playerChoice == "paper") && (computerChoice == "rock")) {
+      hasWon = true;
+    } else if ((playerChoice == "scissors") && (computerChoice == "paper")) {
+      hasWon = true;
+    } else if (playerChoice == computerChoice) {
+      hasTied = true;
+    }
     // Step Three: Fix the following string such that the value of
     // computerChoice is inserted after the word "chose" but before the period.
     // That is, if the computer chose "rock", message should have the value "The
     // computer chose rock.\n"
-    let message = "The computer chose .\n";
+    let message = "The computer chose " + computerChoice + ".\n";
 
     // Step Four: Write an if statement that, when the player wins, would append
     // "Congrats, you win!" onto the end of message above, and "Sorry, you
@@ -43,7 +53,15 @@ function game() {
     // should look like this (note the newline):
     //
     // The computer chose rock.  Sorry, you lose!
-    
+    if (hasWon) {
+      message += "Congrats, you win!";
+    }
+    else if (hasTied){
+      message += "You tied, play again."
+    } else {
+      message += "Sorry, you lose!"
+    }
 
     // Step Five: Open a modal which displays this message to the user.
+    alert(message);
 }
